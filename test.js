@@ -684,7 +684,7 @@ function formatSeconds(s) {
     return (s - (s %= 60)) / 60 + (9 < s ? ':' : ':0' ) + s;
 }
 function getStatusString(lyrics, time) {
-    return `${settings.view.timestamp ? `[${formatSeconds((time / 1000).toFixed(0))}] ` : ""}${settings.view.label ? "Song lyrics - " : ""}${lyrics.replace("♪", "🎶")}`;
+    return `${settings.view.label ? "" : ""}${lyrics.replace("♪", "🎶")}`;
 }
 function parseStatusString(status, data) {
     if(typeof data !== "object") return;
